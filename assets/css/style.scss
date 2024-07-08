@@ -1,0 +1,79 @@
+//*** VARIABLES ***//
+
+//Colors
+$bg_light: #FDFDFD;
+$bg_dark: #161616;
+$txt_black: #000000;
+$txt_white: #FFFFFF;
+$border: #7C7C7C;
+$main_color : #520072;
+//Fonts
+$font_title: "Pacifico";
+$font_txt: "Caveat";
+//Size
+$size_h1: 36px;
+$size_title: 28px;
+$title_todo: 16px;
+$txt_todo: 12px;
+$round: 50px;
+
+
+//*** GENERAL ***//
+* {
+    margin: 0;
+    padding: 0;
+}
+ 
+body {
+    max-width: 100%;
+    min-height: 100dvh;
+    position: relative;
+    & header {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $main_color;
+        & h1 {
+            font-size: $size_h1;
+            font-weight: 700;
+            color: $txt_white;
+            font-family: $font_title;
+        }
+    }
+    & main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+}
+
+
+
+//*** SECTION ADD LIST ***//
+.addlist {
+    width: 85%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid $border;
+    margin-bottom: 10px;
+    & h2 {
+        color: $main_color;
+        font-size: $size_title;
+        margin-bottom: 30px;
+    }
+    & i {
+        font-size: $size_title;
+        color: $main_color;
+        transition: transform 500ms;
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.30);
+        }
+    }
+}
+
