@@ -25,7 +25,7 @@
       </header>
 
       <main>
-         <section class="addlist">
+         <section class="heroheader">
             <h2>Cliquez pour ajouter une nouvelle Todolist !</h2>
             <i id="openModal" class="fa-solid fa-circle-plus"></i>
          </section>
@@ -34,6 +34,15 @@
             <!-- contenu ajouté via JS -->
          </section>
       </main>
+
+      <dialog id="modal">
+         <i id="close" class="fa-solid fa-xmark"></i>
+         <p class="txtmodal">Nommez votre Todolist :</p>
+         <form>
+            <input class="titletodo" type="text" placeholder="Titre" required />
+            <input type="button" id="addlist" value="Créer" />
+         </form>
+      </dialog>
 
       <script defer src="./assets/js/app.js"></script>
    </body>

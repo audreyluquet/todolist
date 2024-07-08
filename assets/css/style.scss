@@ -13,9 +13,10 @@ $font_txt: "Caveat";
 //Size
 $size_h1: 36px;
 $size_title: 28px;
+$title_modal: 20px;
 $title_todo: 16px;
 $txt_todo: 12px;
-$round: 50px;
+$round: 25px;
 
 
 //*** GENERAL ***//
@@ -23,7 +24,6 @@ $round: 50px;
     margin: 0;
     padding: 0;
 }
- 
 body {
     max-width: 100%;
     min-height: 100dvh;
@@ -50,9 +50,71 @@ body {
 }
 
 
+//*** MODAL ***//
+#modal {
+    display: flex;
+    z-index: 2;
+    height: 200px;
+    width: 33%;
+    flex-direction: column;
+    position: relative;
+    top: 33%;
+    left: 33%;
+    align-items: center;
+    border-radius: $round;
+    box-shadow: 0px 4px 8px $border;
+    padding: 10px;
+    #close {
+        position: absolute;
+        right: 17px;
+        color: $main_color;
+        font-size: $title_todo;
+        font-weight: 700;
+    }
+    .txtmodal {
+        display: flex;
+        text-align: center;
+        color: $main_color;
+        font-size: $title_modal;
+        font-weight: 600;
+        margin-top: 35px;
+    }
+    form {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 25px;
+        .titletodo {
+            height: 25px;
+            border: solid 1px $main_color;
+            font-size: $title_todo;
+            &:focus {
+                outline: none; //enleve la bordure système
+                border: solid 3px $main_color;
+            }
+        }
+        #addlist {
+            width: 30%;
+            min-width: 65px;
+            height: 30px;
+            align-self: center;
+            color: $txt_white;
+            background-color: $main_color;
+            font-size: $title_todo;
+            border: none;
+            border-radius: $round;
+            margin: 25px;
+        }
+    }
+}
+#modal::backdrop {
+    background-color: $main_color;
+    opacity: 0.5;
+}
+
 
 //*** SECTION ADD LIST ***//
-.addlist {
+.heroheader {
     width: 85%;
     height: 150px;
     display: flex;
