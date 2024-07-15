@@ -51,9 +51,9 @@ body {
 
 
 //*** MODAL ***//
-#modal {
+dialog {
     display: flex;
-    z-index: 2;
+    z-index: 1;
     height: 200px;
     width: 33%;
     flex-direction: column;
@@ -70,6 +70,9 @@ body {
         color: $main_color;
         font-size: $title_todo;
         font-weight: 700;
+        &:hover {
+            cursor: pointer;
+        }
     }
     .txtmodal {
         display: flex;
@@ -107,7 +110,7 @@ body {
         }
     }
 }
-#modal::backdrop {
+::backdrop {
     background-color: $main_color;
     opacity: 0.5;
 }
@@ -139,3 +142,93 @@ body {
     }
 }
 
+
+
+//*** SECTION TODOLIST ***//
+.todolist {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px;
+    gap: 10px;
+}
+
+article {
+    width: 300px;
+    min-height: 150px;
+    border-radius: 25px;
+    box-shadow: 0px 2px 5px $border;
+    margin: 10px;
+    padding : 15px 8px 10px 8px;
+    & h3 {
+        width: 100%;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        & input {
+        width: 100%;
+        font-family: $font_title;
+        font-size: $title_todo;
+        text-align: center;
+        margin-left: 8px;
+        }
+        & #modiftitle {
+            font-size: $title_todo;
+            margin: 5px;
+        }
+        & .fa-trash-can {
+            font-size: $title_todo;
+            color: red;
+            margin: 5px;
+        }
+    }
+    & form {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0 20px 0;
+        & input {
+            width : 70%;
+            height: 22px;
+            font-size: $txt_todo;
+        }
+        & #addtask {
+            width: 25%;
+            font-size: $txt_todo;
+            color: $txt_white;
+            background-color: $main_color;
+            border-radius: 25px;
+            padding: 8px;
+        }
+    }
+    & ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+}
+
+li {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    & input {
+        width: 15px;
+        height: 15px;
+        color: $main_color;
+    }
+    & p {
+        font-size: $txt_todo;
+    }
+    & .fa-regular .fa-pen-to-square {
+        font-size: $txt_todo;
+        margin: 5px;
+    }
+    & .fa-trash-can {
+        font-size: $txt_todo;
+        color: red;
+    }
+}
