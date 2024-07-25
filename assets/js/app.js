@@ -28,14 +28,21 @@ if (titleTodo) {
 /** Create Todolist **/
 const toDoList = document.getElementById("todoList")
 
-let index // id de chaque todolist
-
 function createList() {
    const list = document.createElement("article")
+   list.innerHTML = `<i onclic="supprList(list[i])" class="fa-solid fa-trash-can"></i>`
    const titleList = document.createElement("h3")
    const txtTitleList = document.getElementById("titleTodo").value
    const title = document.createTextNode(txtTitleList)
    titleList.appendChild(title)
    list.appendChild(titleList)
    toDoList.appendChild(list)
+   // console.log("liste " + list.id)
+}
+
+/** Delete Todolist **/
+function supprList() {
+   const list = document.getElementsByName(list)
+   list.remove()
+   console.log("Liste supprimée !")
 }
