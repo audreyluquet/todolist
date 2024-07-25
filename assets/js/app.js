@@ -25,31 +25,17 @@ if (titleTodo) {
    addList.style.cursor = "pointer"
 }
 
-addList.addEventListener("click", () => {
-   /* for (let i; tabList >= 0; i++) { */
-   createList()
-   /* console.log("index " + tabList.id)
-   } */
-})
-
 /** Create Todolist **/
 const toDoList = document.getElementById("todoList")
-toDoList.innerHTML = ""
 
-let tabList = []
+let index // id de chaque todolist
 
 function createList() {
-   toDoList.innerHTML = `
-      <article id="${tabList.id}">
-         <i class="fa-solid fa-trash-can"></i>
-         <h3>${titleTodo.value}</h3>
-         <form>
-            <input type="text" placeholder="Nom de la tâche" required>
-            <button id="addtask">Ajouter</button>
-         </form>
-         <ul>
-            <!-- vide de base -->
-         </ul>
-      </article>
-   `
+   const list = document.createElement("article")
+   const titleList = document.createElement("h3")
+   const txtTitleList = document.getElementById("titleTodo").value
+   const title = document.createTextNode(txtTitleList)
+   titleList.appendChild(title)
+   list.appendChild(titleList)
+   toDoList.appendChild(list)
 }
