@@ -25,24 +25,16 @@ if (titleTodo) {
    addList.style.cursor = "pointer"
 }
 
-/** Create Todolist **/
+/** Create Todolist with Delete **/
 const toDoList = document.getElementById("todoList")
 
 function createList() {
    const list = document.createElement("article")
-   list.innerHTML = `<i onclic="supprList(list[i])" class="fa-solid fa-trash-can"></i>`
+   list.innerHTML = `<i onclick="this.parentElement.remove()" class="fa-solid fa-trash-can"></i>`
    const titleList = document.createElement("h3")
-   const txtTitleList = document.getElementById("titleTodo").value
+   const txtTitleList = document.getElementById("titleTodo").value.trim() // enlève espace dbt et fin
    const title = document.createTextNode(txtTitleList)
    titleList.appendChild(title)
    list.appendChild(titleList)
    toDoList.appendChild(list)
-   // console.log("liste " + list.id)
-}
-
-/** Delete Todolist **/
-function supprList() {
-   const list = document.getElementsByName(list)
-   list.remove()
-   console.log("Liste supprimée !")
 }

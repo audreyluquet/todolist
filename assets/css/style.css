@@ -144,7 +144,7 @@ article {
 }
 article .fa-trash-can {
   position: relative;
-  right: 270px;
+  left: 270px;
   font-size: 16px;
   color: red;
   cursor: pointer;
