@@ -41,6 +41,7 @@ function createList() {
 
    const deleteIcon = document.createElement("i")
    deleteIcon.className = "fa-solid fa-trash-can"
+   deleteIcon.id = "deleteList"
    deleteIcon.onclick = () => list.remove()
    list.appendChild(deleteIcon)
 
@@ -63,8 +64,9 @@ function createList() {
    form.appendChild(inputTask)
 
    const button = document.createElement("button")
-   button.textContent = "Ajouter"
+   button.id = "addTask"
    button.type = "submit"
+   button.textContent = "Ajouter"
    form.appendChild(button)
 
    list.appendChild(form)
@@ -73,6 +75,8 @@ function createList() {
    list.appendChild(ulTask)
 
    toDoList.appendChild(list)
+
+   titleTodo.reset()
 
    dialog.close()
    dialog.style.display = "none"
@@ -84,20 +88,36 @@ function createTask(form) {
    const task = document.createElement("li")
 
    const check = document.createElement("input")
+   check.id = "check"
    check.type = "checkbox"
+   check.onclick = "checkedBox()"
    task.appendChild(check)
 
-   const nameTask = document.createElement("p")
+   const nameTask = document.createElement("label")
    const txtNametask = form.querySelector("#nameTask").value.trim() // Recup valeur via form
    const name = document.createTextNode(txtNametask)
+   nameTask.for = "check"
    nameTask.appendChild(name)
    task.appendChild(nameTask)
 
    const deleteTaskIcon = document.createElement("i")
    deleteTaskIcon.className = "fa-solid fa-trash-can"
+   deleteTaskIcon.id = "deleteTask"
    deleteTaskIcon.onclick = () => task.remove()
    task.appendChild(deleteTaskIcon)
 
    taskList.appendChild(task)
    form.reset()
+}
+
+/** Checkbox Checked **/
+const check = document.getElementById("check")
+const nameTask = document.getElementsByName("label")
+
+function checkedBox() {
+   if (check.checked == true) {
+      nameTask.classList.add("checked")
+   } else {
+      nameTask.classList.remove("checked")
+   }
 }
